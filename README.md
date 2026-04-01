@@ -32,7 +32,11 @@ The system is designed to:
 
 ## 🔄 Traffic Flow
 
+User → Internet → IGW → ALB (in Public Subnets)
+ALB → Target Group → EC2 (Auto Scaling Group in Private Subnets)
+EC2 → NAT Gateway → IGW → Internet (outbound only)
 
+Admin → AWS Systems Manager (SSM) → EC2 (no SSH / no port 22)
 ---
 
 ## ⚙️ Key Components
